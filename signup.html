@@ -1,0 +1,114 @@
+<?php
+// Check if form was submitted 
+if(isset($_POST['register']))
+{
+	$mobno=$_REQUEST['mobno'];
+	$name=$_REQUEST['name'];
+	$email=$_REQUEST['email'];
+	$password=$_REQUEST['password'];
+	include('config1.php');
+	$query="insert into customer values('$mobno','$name','$email','$password')";
+	$result=mysqli_query($connect,$query) or die("could not execute query");
+	if($result==1)
+	{
+		echo '<script language="javascript">';
+		echo 'alert("customer Account Is Created Successfully!")';
+		echo '</script>';
+	}
+	else
+	{
+		echo '<script language="javascript">';
+		echo 'alert("customer Account Is Not Created Please Check Your Details...!")';
+		echo '</script>';		
+	}
+	
+		
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Project Demo::Contact us</title>
+<!--
+Setting logo for title bar and image size should be 50X50.
+-->
+<link rel="shortcut icon" href="IMAGES/housel.jpg" type="image/x-icon">
+<!-- 
+viewport to make your website look good on all devices.
+width=device-width:Depending on width of the device it takes width.
+initial-scale=1.0:sets the initial zoom level when the page is first loaded by the browser.
+-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 
+Linking Externall css file and 
+media=all :Used for all media type devices.
+-->
+<link href="CSS/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="CSS/signupstyle.css" rel="stylesheet" type="text/css" media="all" />
+
+</head>
+<body>
+<!--header-->
+<header>
+  <a href="#" class="logo"><img src="IMAGES/housel.jpg"/>Online House Rental Management</a>
+  <div class="header-right">
+  <pre><a>Email ID:houserent@gmail.com
+  Contact No:0143143143</a></pre>
+  </div>
+</header>
+<!-- end of header-->
+<!--menu/navigation bar-->
+<nav class="navbar">
+  <a  href="index.html">HOME</a>
+  <a  href="aboutus.html">ABOUT US</a>
+  <a  href="contactus.html">CONTACT US</a>
+    <a class="active1"  href="signup.html">SIGN UP</a>
+<div class="dropdown">
+    <button class="dropbtn">SIGNIN
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="adminsignin.html">ADMIN</a>
+      <a href="customersignin.html">CUSTOMER</a>
+    </div>
+  </div>  
+</nav>
+<!--end of menu/navigation bar-->
+<br/>
+<!--start of signup --> 
+<form action="#" method="post">
+  <div class="container3">
+    <h1>Register(signup)</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+     <label><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="name" id="name" required>
+    <label><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+     <label><b>Mobile Number</b></label>
+    <input type="text" placeholder="Enter mobile no." name="mobno" id="mobno" required>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" id="password" required>
+
+    <label><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+    <hr>
+    
+
+    <button type="submit" class="registerbtn" name="register">Register</button>
+  </div>
+  
+  <div class="container3 signin">
+    <p>Already have an account? <a href="#">Sign in</a>.</p>
+  </div>
+</form>
+<!--end of signup --> 
+<br/><br/><br/>
+<!--start of footer -->
+<footer>
+ <p>&copy; 2022 Online House Rental Management| Design by 3A(Mob-0143143143).</p>
+</footer> 
+<!--end of footer --> 
+</body>
+</html>

@@ -1,0 +1,132 @@
+body {
+  font-family: "monaco", MONOSPACE;
+}
+/*header css*/
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: dimgray;
+  padding: 20px 100px;/*top=bottom=20px and left=right=10px*/
+  margin-left:-20px;
+  
+  
+  
+}
+ /* end of header css*/ 
+/* start of side navigation bar */
+/* Fixed sidenav, full height */
+.sidenav {
+  
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;/*The z-index property specifies the stack order of an element.*/
+  top: 0;
+  left: 0;
+  background-color: dimgray;
+  overflow-x: hidden;
+  padding-top: 30px;
+  
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 20px 8px 20px 10px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  display: block;
+  border: none;
+  background: none;
+  width: 90%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  font-family: "marker felt", fantasy;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: black;
+  background-color:#E2F516;
+  border-radius:10px;
+ 
+  
+}
+
+
+
+/* Add an active class to the active on dropdown button */
+.active {
+  background-color: #E2F516;
+  color: black;
+}
+/* Add an active1 class to the active menu */
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #ba7b0f;
+  padding-left: 10px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+.active1 {
+  color: black;
+  background-color:#35f50f;
+  border-radius:10px;
+}
+/* end of side navigation bar */
+/* start of Main content */
+/* Main content */
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 100%;
+  padding: 0 5px;
+
+}
+
+.row {
+	
+	margin-left:200px;
+	
+	}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #A9A9A9;
+  color: white;
+  border-radius:10px;
+}
+
+.fa {font-size:50px;}
+
+/* end of Main content */
+/*start of footer */
+.footer {
+  position: fixed;
+  
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: left;
+  margin-left:194px;
+}
+/*end of footer */

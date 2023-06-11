@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>User Home</title>
+<!--
+Setting logo for title bar and image size should be 50X50.
+-->
+<link rel="shortcut icon" href="IMAGES/housel.jpg" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="CSS/ViewProfilestyle.css" rel="stylesheet" type="text/css" media="all" />
+<link href="CSS/style.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<!--header-->
+<header>
+<table>
+  <tr><td><img src="IMAGES/housel.jpg" style="margin-left:400px;" /></td><td><h2 style="color:#0A3D62;margin-left:
+  0px;"><b>Online House Rental Management</b></h2></td></tr></table>
+
+</header>
+<!-- end of header-->
+<!-- start of side navigation bar-->
+<div class="sidenav">
+  <a  href="UserHome.php">User Home</a>
+  <a   href="ViewProfile.php"  style="color: black;background-color:#35f50f;border-radius:10px;">Profile</a>
+  <a   href="bookedpackage.php">Booked Package</a>
+  <a href="UserGiveFeedback.php">Give Feedback</a>
+  <a href="changepassword.php">Change Password</a>
+  <a href="file:///J:/Project%20home/project/index.html">Logout</a>
+</div>
+<!-- end of side navigation bar-->
+<!-- START of CONTAINER  -->
+<div class="content">
+	<!--start of view profile --> 
+<br>
+<form action="#">
+  <div class="container3">
+    <center>
+    <h2 style="color:purple;">View Profile</h2>
+    <b>Following Details are the Your Profile Details.</b>
+	</center>
+    <hr>
+	
+	<table  width="100%">
+	<tr>
+	<td><label><b>Customer Name:</b></label></td>
+    <td><input type="text"  name="cname" id="cname" value="Adarsh"required readonly></td>
+	</tr>
+	<tr>
+    <td><label><b>Address:</b></label></td>
+    <td><textarea  name="address" id="address" value="Nasalapur" required readonly></textarea></td>
+    </tr>
+	<tr>
+    <td><label><b>Mobile No:</b></label></td>
+    <td><input type="text"  name="mobno" id="mobno" value="9658745239" required readonly></td>
+    </tr>
+	
+    
+    <tr>
+    <td><button type="submit" class="btn">Update</button></td>
+	
+	</tr>
+	</table>
+	
+  </div>
+  <br><br>
+  
+</form>
+<!--end of view profile -->
+</div>	
+<!-- start of footer-->
+<div class="footer">
+  
+  <p>&copy; 2022 Tours and Travells Management| Design by Ashish,Jagadish,Prakash(Mob-8007531116).</p>
+</div>
+<!-- end of footer-->
+<script type="text/javascript" src="JS/dropdownjs.js"></script>
+</body>
+</html> 

@@ -1,0 +1,65 @@
+/* Start of contact us page */
+/*The asterisk (*) is known as the CSS universal selectors. */
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+ 
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius:15px;
+  background-color:red;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+/*start contact details */
+/* Remove extra left and right margins, due to padding */
+.row2 {
+	margin-left:230px;
+	margin-top:70px;
+	
+}
+/* Float four columns side by side */
+.column2 {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+
+/* Style the counter cards */
+.card2 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+/*end contact details */
+/* end of contact us page */

@@ -1,0 +1,70 @@
+
+
+/* start code of add product css*/
+
+/* Add padding to containers */
+
+
+header
+	  {
+	    background-color:#03fcf0;
+		
+		
+	  }
+.header img
+	  {
+	    float:left;
+	    width:150px;
+		height:100px;
+		border: 3px solid white;
+		border-radius: 10px;
+	  }
+
+
+
+/* Overwrite default styles of hr */
+hr 
+{
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+.container3 table 
+{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width:90%;
+  margin:5px;
+  border: 1px solid #ddd;
+ 
+  
+}
+.container3 th 
+{
+  text-align: center;
+  padding: 10px;
+  background-color:#08c6d4;
+  color:white;
+}
+.container3 td {
+  text-align: center;
+  padding: 15px;
+}
+
+.container3 tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.container3 a{
+	cursor: pointer;
+}
+textarea
+{
+	border:1px solid black;
+} 
+
+
+	
+	
+	
+
+/* end code of view product css*/
+

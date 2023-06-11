@@ -1,0 +1,140 @@
+<?php
+session_start();
+if(isset($_SESSION['username']))
+{
+	if(isset($_POST['reply']))
+	{
+		$fid=$_REQUEST['fid'];
+		$frmsg=$_REQUEST['frmsg'];
+		include('config1.php');
+        $query="update feedback set frmsg='$frmsg' where fid='$fid'";
+        $result=mysqli_query($connect,$query);
+        if($result==1)
+		{
+			echo'<script language="javascript">';
+			echo 'alert("Feedback Replied Successfully!")';
+			echo '</script>';
+	    }else{
+		    echo'<script language="javascript">';
+			echo 'alert("Feedback Not Replied")';
+			echo '</script>';
+			
+		   
+	   }
+	}		
+	
+	
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin::View Feedback</title>
+<!--
+Setting logo for title bar and image size should be 50X50.
+-->
+<link rel="shortcut icon" href="IMAGES/housel.jpg" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="CSS/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="CSS/viewstaffstyle.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<!--header-->
+<header>
+<table>
+  <tr><td><img src="IMAGES/housel.jpg" style="margin-left:400px;" /></td><td><h2 style="color:#F1F1F1;margin-left:
+  0px;"><b>WELCOME TO OUR RENTAL SYSTEM</b></h2></td></tr></table>
+
+</header>
+<!-- end of header-->
+<!-- start of side navigation bar-->
+<div class="sidenav">
+  <a href="AdminHome.html">Admin Home</a>
+  <a href="bookings.html">Bookings</a> 
+  <a style="color: black;background-color:#35f50f;border-radius:10px;" href="FeedbackView.html">View Feedbacks</a>
+  <a href="ChangePassword.html">Change Password</a>
+  <a href="file:///J:/Project%20home/project/index.html">Logout</a>
+</div>
+<!-- end of side navigation bar-->
+<!-- start of main content-->
+
+<div class="main">
+<!--start of add product --> 
+<br>
+  <div class="container3">
+    <center>
+    <h1 style="color:#4B5320;">FEEDBACK VIEW </h1>
+    <p></p>
+	</center>
+    <hr>
+		<table>
+  <tr>
+    <th>F.ID</th>
+    <th>NAME</th>
+	<th>MOBILE NUMBER</th>
+	<th>FEEDBACKON</th>
+	<th>FEEDBACKDATE</th>
+	<th>FEEDBACKMSG</td>
+	<th>RATING</th>
+	<th>REPLY MSG</th>
+	<th>ACTION</th>
+  </tr>
+  <?php
+include('config1.php');
+$query="select * from feedback";
+$result=mysqli_query($connect,$query) or die("could not execute query");
+if(mysqli_num_rows($result)<1)
+{
+	?>
+	<tr><td>NO RECORDS FOUND</td></tr>
+	<?php
+}else{
+
+while($row=mysqli_fetch_array($result))
+{
+	
+?>
+
+  <tr>
+  <form action="#" method="post">
+  <input type="hidden" name="fid" value="<?php echo $row['fid'];?>" />  
+	<td><?php echo $row['fid']; ?></td>
+	<td><?php echo $row['fname']; ?></td>
+	<td><?php echo $row['mobno']; ?></td>
+	<td><?php echo $row['fon']; ?></td>
+	<td><?php echo $row['fmsg']; ?></td>
+	<td><?php echo $row['fdate']; ?></td>
+	<td><?php echo $row['frname']; ?></td>
+	<td><input type="text" name="frmsg" value="<?php echo $row['frmsg']; ?>"/></td>
+	<td><input type="submit" name="reply" value="REPLY"/>
+  </tr>
+  </form>
+<?php
+}
+}
+?>
+</table>
+  </div>
+  <br><br>
+  
+
+<!--end of add product --> 
+  
+</div>
+<!-- end of main content-->
+<!-- start of footer-->
+<div class="footer">
+  
+    <p>&copy; 2022 ONLINE HOUSE RENTAL MANAGEMENT| Design by 3A-(Mob-0143143143).</p>
+</div>
+<!-- end of footer-->
+<script type="text/javascript" src="JS/dropdownjs.js"></script>
+</body>
+</html> 
+<?php
+}
+else{
+	header('location:../adminsignin.php');
+}
+?>
+
